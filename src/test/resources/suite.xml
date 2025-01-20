@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Automate daily finance management">
+    <test name="e2e test">
+        <classes>
+            <class name="test.runner.RegisterTestRunner"></class>
+            <class name="test.runner.LoginTestRunner"></class>
+            <class name="test.runner.DashboardTestRunner"></class>
+        </classes>
+    </test>
+</suite>
