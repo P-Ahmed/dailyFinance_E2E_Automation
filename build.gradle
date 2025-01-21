@@ -18,16 +18,20 @@ dependencies {
     implementation group: 'com.github.javafaker', name: 'javafaker', version: '1.0.2'
     // https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
     implementation group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
-
-
 }
 
 test {
-    useTestNG(){
-        if(project.hasProperty("email") && project.hasProperty("password")){
-            systemProperties.put("email", project.property("email"))
-            systemProperties.put("password", project.property("password"))
+    useTestNG {
+        if (project.hasProperty("suite")) {
+            suites "./src/test/resources/${project.suite}.xml"
+        } else {
+            suites "./src/test/resources/default-suite.xml"
         }
-        suites "./src/test/resources/suite.xml"
+    }
+
+    // Pass additional system properties for email and password
+    if (project.hasProperty("email") && project.hasProperty("password")) {
+        systemProperty "email", project.getProperty("email")
+        systemProperty "password", project.getProperty("password")
     }
 }

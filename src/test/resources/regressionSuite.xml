@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Automate daily finance management">
+    <test name="Regression Tests">
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="test.runner.RegisterTestCase"/>
+            <class name="test.runner.LoginTestCase"/>
+            <class name="test.runner.DashboardTestCase"/>
+        </classes>
+    </test>
+</suite>
+

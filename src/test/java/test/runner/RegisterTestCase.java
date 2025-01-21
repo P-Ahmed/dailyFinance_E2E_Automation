@@ -5,14 +5,13 @@ import pages.LoginPage;
 import pages.RegisterPage;
 import setup.BrowserSetup;
 
-public class RegisterTestRunner extends BrowserSetup {
+public class RegisterTestCase extends BrowserSetup {
     RegisterPage registerPage = new RegisterPage();
     LoginPage loginPage = new LoginPage();
 
-    @Test
+    @Test(groups = {"regression", "smoke"})
     public void doRegistration() throws InterruptedException {
         loginPage.goToRegisterPage();
         registerPage.doRegistar();
     }
-
 }

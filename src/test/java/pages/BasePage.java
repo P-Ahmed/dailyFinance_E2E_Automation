@@ -44,7 +44,6 @@ public class BasePage {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     public void browserBack() {
@@ -54,6 +53,4 @@ public class BasePage {
     public void browserRefresh() {
         BrowserFactory.getDriver().navigate().refresh();
     }
-
-
 }

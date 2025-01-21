@@ -52,6 +52,7 @@ public class DashboardPage extends BasePage {
         waitAndClick(updateButton);
         acceptAlerts();
     }
+
     public void logout(){
         waitAndClick(userMenuButton);
         waitAndClick(logoutList);

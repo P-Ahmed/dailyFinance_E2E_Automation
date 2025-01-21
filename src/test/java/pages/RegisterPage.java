@@ -10,7 +10,6 @@ import utils.Utility;
 import java.io.IOException;
 
 public class RegisterPage extends BasePage {
-
     @FindBy(id = "firstName")
     WebElement firstNameField;
     @FindBy(id = "email")

@@ -11,7 +11,6 @@ import utils.Utility;
 import java.io.IOException;
 
 public class LoginPage extends BasePage {
-
     @FindBy(css = "a[href='/register']")
     WebElement registerLink;
     @FindBy(id = "email")
@@ -59,5 +58,4 @@ public class LoginPage extends BasePage {
         clearField(emailField);
         clearField(passwordField);
     }
-
 }
