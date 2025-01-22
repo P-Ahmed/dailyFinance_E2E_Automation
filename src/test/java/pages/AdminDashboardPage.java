@@ -4,12 +4,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import setup.BrowserSetup;
 import utils.BrowserFactory;
 
 import java.util.List;
 
-public class DashboardPage extends BasePage {
+public class AdminDashboardPage extends BasePage {
     @FindBy(css = "button")
     List<WebElement> viewButton;
     @FindBy(xpath = "//button[contains(text(),'Edit')]")
@@ -29,7 +28,7 @@ public class DashboardPage extends BasePage {
     @FindBy(className = "no-data")
     WebElement searchValidationMessage;
 
-    public DashboardPage() {
+    public AdminDashboardPage() {
         PageFactory.initElements(BrowserFactory.getDriver(), this);
     }
 
