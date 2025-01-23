@@ -41,7 +41,7 @@ public class Utility {
             jsonObject.put("phoneNumber", phoneNumber);
             jsonObject.put("password", password);
 
-            FileWriter file = new FileWriter("src/main/resources/users.json");
+            FileWriter file = new FileWriter("src/test/resources/users.json");
             file.write(jsonObject.toJSONString());
             file.flush();
             file.close();
@@ -50,12 +50,16 @@ public class Utility {
         }
     }
 
-    public static String readJSONFile(String key) throws IOException, ParseException {
-
-        JSONParser jsonParser = new JSONParser();
-        Object obj = jsonParser.parse(new FileReader("src/main/resources/users.json"));
-        JSONObject jsonObject = (JSONObject) obj;
-
+    public static String readJSONFile(String key){
+        JSONObject jsonObject = null;
+        try{
+            JSONParser jsonParser = new JSONParser();
+            Object obj = jsonParser.parse(new FileReader("src/main/resources/users.json"));
+            jsonObject = (JSONObject) obj;
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        assert jsonObject != null;
         return (String) jsonObject.get(key);
     }
 }

@@ -4,8 +4,8 @@ import org.testng.annotations.Test;
 import pages.AdminDashboardPage;
 import setup.BrowserSetup;
 
-public class DashboardTestCase extends BrowserSetup {
-    AdminDashboardPage adminDashboardPage;
+public class AdminDashboardTestCase extends BrowserSetup {
+    AdminDashboardPage adminDashboardPage = new AdminDashboardPage();
 
     @Test(priority = 3, description = "verify invalid search validation", groups = {"regression", "smoke"})
     public void searchValidation() {
@@ -14,7 +14,6 @@ public class DashboardTestCase extends BrowserSetup {
 
     @Test(priority = 1, description = "verify user can update name", groups = {"regression", "smoke"})
     public void updatingUserDetails() throws InterruptedException {
-        adminDashboardPage = new AdminDashboardPage();
         adminDashboardPage.editUserDetails();
     }
 
@@ -23,9 +22,13 @@ public class DashboardTestCase extends BrowserSetup {
         adminDashboardPage.deleteUser();
     }
 
-
     @Test(priority = 4, description = "verify user can logout", groups = {"regression", "smoke"})
     public void userLogout() {
         adminDashboardPage.logout();
+    }
+
+    @Test(priority = 4, description = "verify user can search by email", groups = {"regression", "smoke"})
+    public void userSearch() {
+        adminDashboardPage.searchByEmail();
     }
 }

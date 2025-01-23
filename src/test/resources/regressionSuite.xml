@@ -9,7 +9,7 @@
         <classes>
             <class name="test.runner.RegisterTestCase"/>
             <class name="test.runner.LoginTestCase"/>
-            <class name="test.runner.DashboardTestCase"/>
+            <class name="test.runner.AdminDashboardTestCase"/>
         </classes>
     </test>
 </suite>
